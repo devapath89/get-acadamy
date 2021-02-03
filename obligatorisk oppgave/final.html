@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="final.js"></script>
+    <script>
+        QUnit.test("check if valid day'", function (assert) {
+            const actual = isdateValid('30.04.2021');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if 10 symbols '", function (assert) {
+            const actual = isdateValid('17.01.20202');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if date dosnt have dots correct '", function (assert) {
+            const actual = isdateValid('1701.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if year contains 4 numbers'", function (assert) {
+            const actual = isdateValid('17.01.0');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if month is 2 numbers ", function (assert) {
+            const actual = isdateValid('17.0.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if month is between 1-12 ", function (assert) {
+            const actual = isdateValid('17.13.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if day is over 31 ", function (assert) {
+            const actual = isdateValid('32.12.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if day is 31 for a month that dosn't have 31 ", function (assert) {
+            const actual = isdateValid('31.02.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if day is 30 and its febuary ", function (assert) {
+            const actual = isdateValid('30.02.2020');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+        
+        QUnit.test("check ifcheck if day is 29 ,febuary but not ", function (assert) {
+            const actual = isdateValid('29.02.2021');
+            const expected = false;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("check if its 29 of febuary and its leapyear ", function (assert) {
+            const actual = isdateValid('29.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        
+    </script>
+</body>
+</html>

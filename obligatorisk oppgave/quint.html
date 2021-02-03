@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="test.js"></script>
+    <script>
+        QUnit.test("check if lenght is 10'", function (assert) {
+            const actual = isdateValid('02.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if dot is 3 and 6'", function (assert) {
+            const actual = isdateValid('02.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if year is right", function (assert) {
+            const actual = isdateValid('02.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+        QUnit.test("check if month is right", function (assert) {
+            const actual = isdateValid('02.02.2020');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+     
+        
+
+   
+    </script>
+</body>
+</html>
