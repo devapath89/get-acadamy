@@ -20,7 +20,7 @@
         var points = 0;
         var pointsPerClick = 1;
         var smileyIndex = 0;
-       
+        var harjukset =''
 
         // controller
         function doClick() {
@@ -39,6 +39,7 @@
             if (points < 10) return;
             points -=10;
             pointsPerClick +=10;
+            harjukset = 'du har jukset din skitne person!';
            
             updateView();
         }
@@ -50,7 +51,7 @@
             document.getElementById('app').innerHTML = `
                 <div id="image" onclick="doClick()">${smiley}</div>
                 <div id="pointsInfo">${points}</div>
-
+                 ${harjukset}   
                 <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
                 <button onclick="Cheat()">juks ,med 10x (10poeng)</button>
                 `;
