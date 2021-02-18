@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+        <script>
+            // model
+            let app = document.getElementById("app");
+            let update = `BBBBBBBBBBBBBBBBBB`;
+            // view
+            updateView();
+
+            function updateView() {
+                let html = ``;
+
+                html += `  <p>Ferdighet 3 - spesialtilfelle, this og gjøre noe med det elementet man trykker på (eller som utløser eventet)</p>
+            Samenlign dette eksempelet med "Ferdighet 2 - Onclick - kjøre funksjon som endrer innerHTML ut fra Id"!
+            <h2 id="z" onclick="doSomething(this)">AAAAAAAAAAAAAAAA</h2>
+            <h2 id="y" onclick="doSomething(this)">${update}</h2> `;
+                app.innerHTML = html;
+            }
+
+            //controller
+            function doSomething(fsf) {
+                update = `du har oppdatert`;
+                updateView();
+        }
+        </script>
+</body>
+
+</html>
